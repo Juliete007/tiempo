@@ -1,0 +1,119 @@
+html{
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.encabezado {
+    background-color: rgb(224, 224, 224);
+    box-shadow: 0 2rem 3rem rgba(132,139,200,0.18);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+.izquierda {
+    margin-right: auto;
+}
+
+.derecha {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+.saludo{
+    margin-right: 10px;
+}
+  
+.foto-perfil {
+    border-radius: 50%;
+    width: 50px; /* Ajusta el ancho deseado */
+    height: 50px; /* Ajusta la altura deseada */
+    border: 1px solid black;
+    margin-left: 10px;
+  }
+
+.derecha .nombre {
+    color: #FF0060; /* Cambia el color del texto a azul */
+    font-weight: bold; /* Aplica negrita al texto */
+  }
+
+.nombre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  
+
+.lista {
+    background-color: rgb(224, 224, 224);
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+    flex-direction: column;
+    box-shadow: 0 2rem 3rem rgba(132,139,200,0.18);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.lista a{
+    display: flex;
+    align-items: center;
+}
+
+.lista h3{
+    margin-left: 10px;
+}
+
+.boton-logout{
+    margin-top: 5px;
+    font-size: 18px;
+    background-color: #FF0060;
+    width: 100%;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    -webkit-transition-duration: 0.3s;    
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.boton-logout span,p{
+    margin-left: 10px;
+}
+
+.boton-logout:hover,.boton-logout:focus,.boton-logout:active{
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.contenido{
+    flex: 1;
+    background-color: rgb(224, 224, 224);
+    border-radius: 15px;
+    margin-left: 15px;
+    box-shadow: 0 2rem 3rem rgba(132,139,200,0.18);
+}
+
+.contenedor{
+    margin-top: 20px;
+    display: flex;
+}
+
+.foto-perfil {
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+  }
+  
