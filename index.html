@@ -9,62 +9,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Web</title>
+    <script src="script.js"></script>
 </head>
-<body>
+<body onload="transparente()">
 
     <header class="encabezado">
         
         <div class="izquierda">
-            <p id="fecha-hora"><script src="script.js"></script></p>
-            <p id="ubicacion"><script src="script.js"></script></p>
+            <p id="fecha-hora"></p>
+            <p id="ubicacion"></p>
         </div>
-        
+
+        <!-- Contenedor para mostrar el nombre de usuario y la foto de perfil -->
         <div class="derecha">
-            <h3 class="saludo">Bienvenido</h3>
+            <h3 class="saludo"></h3>
             <h3>
-                <span class="nombre">
-                    <script>
-                        // Variable para almacenar el nombre de usuario válido
-                        var nombreUsuarioValido1 = "Julio";
-                        var nombreUsuarioValido2 = "Oscar";
-
-                        // Variable para almacenar el nombre de usuario ingresado
-                        var nombreUsuario = "";
-
-                        // Ciclo while para solicitar el nombre de usuario hasta que sea válido
-                        while (nombreUsuario !== nombreUsuarioValido1 && nombreUsuario !== nombreUsuarioValido2) {
-                        // Solicitar el nombre de usuario utilizando un cuadro de diálogo de entrada
-                        nombreUsuario = prompt("Ingrese su nombre de usuario:");
-
-                        // Verificar si se proporcionó un nombre de usuario
-                        if (nombreUsuario) {
-                            // Comprobar si el nombre de usuario es válido
-                            if (nombreUsuario === nombreUsuarioValido1 || nombreUsuario === nombreUsuarioValido2) {
-                            // Hacer algo si el nombre de usuario es válido
-                            document.write(nombreUsuario);
-                            } else {
-                            // Hacer algo si el nombre de usuario no es válido
-                            alert("Nombre de usuario incorrecto. Por favor, inténtelo nuevamente.");
-                            }
-                        } else {
-                            alert("Debe ingresar un nombre de usuario válido. Por favor, inténtelo nuevamente.");
-                        }
-
-                        if (nombreUsuario) {
-                        // Comprobar el nombre de usuario y asignar la imagen correspondiente
-                        if (nombreUsuario === "Julio") {
-                            document.write('<img src="foto-perfil.png" alt="Foto de perfil" class="foto-perfil">');
-                        } else if (nombreUsuario === "Oscar") {
-                            document.write('<img src="foto-perfil-2.png" alt="Foto de perfil" class="foto-perfil">');
-                        } else {
-                        }
-                        } else {
-                        }
-                        }
-                    </script>
-                </span>
+                <span class="nombre" id="nombreUsuarioContainer"></span>
             </h3>
+            <img src="" class="foto-perfil" id="fotoPerfil">
         </div>
+
 
     </header>
 
@@ -125,15 +89,16 @@
                 </span>
                 <h3>Más opciones</h3>
             </a>
-            <button class="boton-logout">
+            <script src="script.js"></script>
+            <button class="boton-logout log-in" onclick="pedirUsuario()">
                 <span class="material-symbols-outlined">
-                    logout
+                    login
                 </span>
-                <p>Log out</p>
+                <p>Log in</p>
             </button>
         </div>
         <div class="contenido">
-            <p>Hola</p>
+            
         </div>
 
     </div>
