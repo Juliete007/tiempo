@@ -160,7 +160,19 @@ function obtenerTiempo(ciudad) {
       
       // Actualizar el contenido HTML del elemento con la información del tiempo
       var contenidoElemento = document.querySelector('.contenido');
-      contenidoElemento.innerHTML = `<div class="linea-1">La temperatura actual en ${ciudad} es de ${temperatura}°C. El clima es ${descripcion}.</div><div class="linea-2">La temperatura mínima es ${tempMin}°C y la máxima es de ${tempMax}°C</div>`;
+      contenidoElemento.innerHTML = `<div class="linea-1">La temperatura actual en ${ciudad} es de ${temperatura}°C. El clima es ${descripcion}.</div>
+      <div class="linea-2">
+      <div class="temperatura-min">
+      <span class="material-symbols-outlined" id="arriba">
+      arrow_downward
+      </span> 
+      ${tempMin}°C 
+      </div>
+      <div class="temperatura-max">
+      <span class="material-symbols-outlined" id="abajo">
+      arrow_upward
+      </span> ${tempMax}°C
+      </div></div>`;
   })
   .catch(error => {
       console.log("Error al obtener los datos meteorológicos:", error);
