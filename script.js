@@ -157,22 +157,47 @@ function obtenerTiempo(ciudad) {
       var descripcion = data.weather[0].description;
       var tempMax = data.main.temp_max;
       var tempMin = data.main.temp_min;
+      var presion = data.main.pressure;
+      var viento = data.wind.speed;
       
       // Actualizar el contenido HTML del elemento con la información del tiempo
       var contenidoElemento = document.querySelector('.contenido');
-      contenidoElemento.innerHTML = `<div class="linea-1">La temperatura actual en ${ciudad} es de ${temperatura}°C. El clima es ${descripcion}.</div>
+      contenidoElemento.innerHTML = `<div class="linea-1">La temperatura actual en <span class="ciudad">${ciudad}</span> es de ${temperatura}°C. El clima es ${descripcion}.</div>
       <div class="linea-2">
       <div class="temperatura-min">
-      <span class="material-symbols-outlined" id="arriba">
+      <p>
+      <span class="material-symbols-outlined" id="abajo">
       arrow_downward
       </span> 
-      ${tempMin}°C 
+      ${tempMin}°C
+      </p> 
       </div>
       <div class="temperatura-max">
-      <span class="material-symbols-outlined" id="abajo">
+      <p>
+      <span class="material-symbols-outlined" id="arriba">
       arrow_upward
       </span> ${tempMax}°C
-      </div></div>`;
+      </p>
+      </div>
+      </div>
+      <div class="linea-3">
+      <div class="presion">
+      <p>
+      <span class="material-symbols-outlined" id="pressure">
+    altitude
+    </span>
+      ${presion} hPa
+      </p>
+      </div>
+      <div class="viento">
+      <p>
+      <span class="material-symbols-outlined" id="aire">
+      air
+      </span>
+      ${viento} Km/h
+      </p>
+      </div>
+      </div>`;
   })
   .catch(error => {
       console.log("Error al obtener los datos meteorológicos:", error);

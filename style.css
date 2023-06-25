@@ -129,33 +129,94 @@ html{
     height: 75px;
   }
   
-.linea-1,
-.linea-2 {
-    margin-bottom: 15px; /* Ajusta el espacio entre los divs según tus necesidades */
-}
-
-#abajo{
-    color: #0000FF;
+.linea-1 {
+    margin-bottom: 10px; /* Ajusta el espacio entre los divs según tus necesidades */
 }
 
 #arriba{
+    color: #0000FF;
+    margin-right: 5px;
+}
+
+#abajo{
     color: #FF0000;
+    margin-right: 5px;
 }
 
 .temperatura-min{
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 4px;
     display: inline-block;
     flex-direction: column;
     margin-right: 5px;
-    margin-bottom: 7.5px;
+    align-items: center;
+    justify-content: center;
 }
 
 .temperatura-max{
-    border: 2px solid black;
-    border-radius: 10px;
-    padding: 4px;
     display: inline-block;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.temperatura-min p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+.temperatura-max p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.ciudad {
+    color:#FF0060;
+    font-weight: bold;
+  }
+  
+.linea-3{
+    display: flex;
+}
+
+.presion{
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.viento{
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.viento p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.presion p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#aire{
+    margin-right: 10px;
+}
+
+#pressure{
+    margin-right: 10px;
 }
