@@ -180,7 +180,7 @@ html{
   }
   
 .linea-3{
-    display: flex;
+    display: inline-block;
 }
 
 .presion{
@@ -221,3 +221,12 @@ html{
     margin-right: 10px;
 }
 
+.ajustado {
+  display: inline-block;
+  box-shadow: 0 1rem 5rem rgba(132, 139, 200, 0.37);
+  border-radius: 15px;
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
