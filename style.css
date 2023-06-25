@@ -149,6 +149,7 @@ html{
     display: inline-block;
     flex-direction: column;
     margin-right: 5px;
+    margin-bottom: 7.5px;
 }
 
 .temperatura-max{
