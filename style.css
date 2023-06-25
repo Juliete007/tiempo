@@ -113,6 +113,7 @@ html{
     text-align: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     font-size: larger;
 }
@@ -128,3 +129,7 @@ html{
     height: 75px;
   }
   
+.linea-1,
+.linea-2 {
+    margin-bottom: 15px; /* Ajusta el espacio entre los divs según tus necesidades */
+}

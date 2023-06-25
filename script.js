@@ -155,10 +155,12 @@ function obtenerTiempo(ciudad) {
       // Acceder a los datos meteorológicos
       var temperatura = data.main.temp;
       var descripcion = data.weather[0].description;
+      var tempMax = data.main.temp_max;
+      var tempMin = data.main.temp_min;
       
       // Actualizar el contenido HTML del elemento con la información del tiempo
       var contenidoElemento = document.querySelector('.contenido');
-      contenidoElemento.innerHTML = `La temperatura actual en ${ciudad} es de ${temperatura}°C. El clima es ${descripcion}.`;
+      contenidoElemento.innerHTML = `<div class="linea-1">La temperatura actual en ${ciudad} es de ${temperatura}°C. El clima es ${descripcion}.</div><div class="linea-2">La temperatura mínima es ${tempMin}°C y la máxima es de ${tempMax}°C</div>`;
   })
   .catch(error => {
       console.log("Error al obtener los datos meteorológicos:", error);
