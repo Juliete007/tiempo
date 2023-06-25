@@ -90,7 +90,7 @@ function pedirUsuario() {
     var fotoPerfil = document.getElementById("fotoPerfil");
     fotoPerfil.src = "";
     var saludoElement = document.querySelector(".saludo");
-    saludoElement.textContent = "Iniciar sesión";
+    saludoElement.textContent = "";
     var fotoPerfilElement = document.getElementById("fotoPerfil");
     fotoPerfilElement.src = "";
     
@@ -140,7 +140,7 @@ function transparente(){
   var fotoPerfilElement = document.getElementById("fotoPerfil");
   fotoPerfilElement.style.opacity = "0";
   var saludoElement = document.querySelector(".saludo");
-    saludoElement.textContent = "Iniciar sesión";
+    saludoElement.textContent = "";
 }
 
 function obtenerTiempo(ciudad) {
@@ -206,3 +206,14 @@ function obtenerTiempo(ciudad) {
       console.log("Error al obtener los datos meteorológicos:", error);
   });
 }
+
+
+
+function toggleModoOscuro() {
+  const toggleButton = document.getElementById('toggle-modo');
+  const body = document.body;
+  body.classList.toggle('modo-oscuro');
+}
+
+toggleButton.addEventListener('click', toggleModoOscuro);
+

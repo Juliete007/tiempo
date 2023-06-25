@@ -87,13 +87,14 @@ html{
     -webkit-transition-property: box-shadow, transform;
     transition-property: box-shadow, transform;
     transition: background-color 0.75s ease;
+    transition: transform 0.5s;
 }
 
 .boton-logout span,p{
     margin-left: 10px;
 }
 
-.boton-logout:hover,.boton-logout:focus,.boton-logout:active{
+.boton-logout:hover,.boton-logout:active{
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -102,7 +103,13 @@ html{
 .boton-logout.log-in {
     background-color: #00c278;
     transition: background-color 0.75s ease;
+    transform: scale(1);
+    transition: transform 0.5s;
   }
+
+.log-in:hover{
+    transform: scale(1.1);
+}
 
 .contenido{
     flex: 1;
@@ -124,6 +131,7 @@ html{
 }
 
 .foto-perfil {
+    margin-left: 15px;
     border-radius: 50%;
     width: 75px;
     height: 75px;
@@ -229,4 +237,34 @@ html{
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.modo-oscuro {
+    text-align: center;
+    padding: 20px;
+  }
+  
+body.modo-oscuro {
+    background-color: #222;
+    color: #fff;
+}  
+
+#toggle-modo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.4s;
+    transition: background-color 0.5s;
+    transition: color 0.5s;
+}
+
+#toggle-modo:hover{
+    transform: scale(1.2);
+    background-color: grey;
+    color: white;
 }
