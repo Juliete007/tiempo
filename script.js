@@ -159,10 +159,12 @@ function obtenerTiempo(ciudad) {
       var tempMin = data.main.temp_min;
       var presion = data.main.pressure;
       var viento = data.wind.speed;
+      var img = data.weather[0].icon
       
       // Actualizar el contenido HTML del elemento con la información del tiempo
       var contenidoElemento = document.querySelector('.contenido');
-      contenidoElemento.innerHTML = `<div class="linea-1">La temperatura actual en <span class="ciudad">${ciudad}</span> es de ${temperatura}°C. El clima es ${descripcion}.</div>
+      contenidoElemento.innerHTML = `<img src="http://openweathermap.org/img/wn/${img}@2x.png" alt="error" class="imagen">
+      <div class="linea-1">La temperatura actual en <span class="ciudad">${ciudad}</span> es de ${temperatura}°C. El clima es ${descripcion}.</div>
       <div class="linea-2">
       <div class="temperatura-min">
       <p>
