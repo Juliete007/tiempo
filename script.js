@@ -163,7 +163,7 @@ function obtenerTiempo(ciudad) {
       
       // Actualizar el contenido HTML del elemento con la información del tiempo
       var contenidoElemento = document.querySelector('.contenido');
-      contenidoElemento.innerHTML = `<div class="ajustado"><img src="http://openweathermap.org/img/wn/${img}@2x.png" alt="error" class="imagen">
+      contenidoElemento.innerHTML = `<div class="ajustado" id="ajustado"><img src="http://openweathermap.org/img/wn/${img}@2x.png" alt="error" class="imagen">
       <div class="linea-1">La temperatura actual en <span class="ciudad">${ciudad}</span> es de ${temperatura}°C. El clima es ${descripcion}.</div>
       <div class="linea-2">
       <div class="temperatura-min">
@@ -200,7 +200,12 @@ function obtenerTiempo(ciudad) {
       </p>
       </div>
       </div>
+      <div id="inputContainer">
+      </div>
       </div>`;
+
+      divPrincipal();
+      
   })
   .catch(error => {
       console.log("Error al obtener los datos meteorológicos:", error);
@@ -217,3 +222,78 @@ function toggleModoOscuro() {
 
 toggleButton.addEventListener('click', toggleModoOscuro);
 
+var inputContainerShown = false;
+
+function mostrarInput() {
+
+  inputContainerShown = true;
+
+  var inputContainer = document.getElementById("inputContainer");
+
+  // Crea el elemento <input>
+  var input = document.createElement("input");
+  input.setAttribute("type", "text");
+  input.setAttribute("placeholder", "Localizacion");
+  input.setAttribute("class", "input-texto");
+
+  // Crea el elemento <button>
+  var boton = document.createElement("button");
+  boton.setAttribute("class", "input-boton");
+
+  // Crea el elemento <span> dentro del botón
+  var span = document.createElement("span");
+  span.setAttribute("class", "material-symbols-outlined");
+  span.innerText = "location_searching";
+
+  // Agrega el <span> al botón
+  boton.appendChild(span);
+
+  // Agrega el <input> y el <button> al contenedor
+  inputContainer.appendChild(input);
+  inputContainer.appendChild(boton);
+
+  // Función para obtener el valor del campo de texto y llamar a obtenerTiempo()
+  function obtenerTiempoConTexto() {
+    var ciudad = input.value;
+    obtenerTiempo(ciudad);
+  }
+
+  // Agrega el evento de click al botón
+  boton.addEventListener("click", function() {
+    obtenerTiempoConTexto();
+    inputContainerShown = false;
+  });
+
+  // Agrega el evento de teclado al campo de texto
+  input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      inputContainerShown = false;
+      // Verifica si la tecla presionada es "Enter"
+      obtenerTiempoConTexto();
+    }
+  });
+}
+
+function comprobarMostrarInput() {
+  if (!inputContainerShown) {
+    mostrarInput();
+  }
+}
+
+function animacion() {
+  var inputContainer = document.getElementById("inputContainer");
+  
+  // Hacemos visible el contenedor y lo volvemos a su tamaño normal
+  inputContainer.style.opacity = 1;
+  inputContainer.style.transform = "scale(1)";
+};
+
+function divPrincipal() {
+  var div = document.getElementById("ajustado");
+  
+  // Hacemos visible el contenedor y lo volvemos a su tamaño normal después de 0.5 segundos
+  setTimeout(function() {
+    div.style.opacity = 1;
+    div.style.transform = "scale(1)";
+  }, 10); // 500 milisegundos = 0.5 segundos
+}

@@ -88,6 +88,7 @@ html{
     transition-property: box-shadow, transform;
     transition: background-color 0.75s ease;
     transition: transform 0.5s;
+    cursor: pointer;
 }
 
 .boton-logout span,p{
@@ -109,6 +110,7 @@ html{
 
 .log-in:hover{
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .contenido{
@@ -237,6 +239,8 @@ html{
   justify-content: center;
   align-items: center;
   text-align: center;
+  transform: scale(0.5); /* Reducimos el tamaño del contenedor a la mitad */
+  transition: opacity 0.75s, transform 0.6s; /* Aplicamos una transición suave */
 }
 
 .modo-oscuro {
@@ -267,4 +271,40 @@ body.modo-oscuro {
     transform: scale(1.2);
     background-color: grey;
     color: white;
+}
+
+.home,.search,.notificaciones,.mail,.listas,.guardados,.verificado,.perfil,.more{
+    transition: transform 0.5s;
+}
+
+.home:hover,.search:hover,.notificaciones:hover,.mail:hover,.listas:hover,.guardados:hover,.verificado:hover,.perfil:hover,.more:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.input-texto{
+    border-radius: 50px;
+    padding: 0.75rem 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.6 ease-out;
+    margin-right: 15px;
+    border: 2px solid white;
+    background: rgba(132, 139, 200, 0.37);
+}
+
+.input-boton{
+    border-radius: 50%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    aspect-ratio: 1;
+}
+
+#inputContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.5); /* Reducimos el tamaño del contenedor a la mitad */
+    transition: opacity 0.75s, transform 0.6s; /* Aplicamos una transición suave */
 }
