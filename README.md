@@ -29,15 +29,6 @@ Este proyecto es una aplicación web que muestra la fecha, hora y clima en tiemp
 6. Puedes alternar entre el modo claro y oscuro haciendo clic en el botón "Toggle Modo".
 7. Puedes buscar información meteorológica de una ubicación específica ingresando el nombre de la ubicación en el campo de texto y presionando Enter o haciendo clic en el botón de búsqueda.
 
-## Contribución
-
-Si deseas contribuir a este proyecto, sigue estos pasos:
-
-1. Haz un fork del repositorio.
-2. Crea una rama para tu nueva función o corrección de errores.
-3. Realiza los cambios necesarios y realiza los commits.
-4. Envía un pull request describiendo los cambios que realizaste y por qué deben ser fusionados.
-
 ## Autor
 
 [Julio Francés Prieto] - [https://github.com/Juliete007]
