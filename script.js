@@ -1,7 +1,5 @@
-// Obtener el elemento donde se mostrará la fecha y hora
 var fechaHoraElemento = document.getElementById("fecha-hora");
 
-// Función para obtener la fecha y hora actual
 function obtenerFechaHora() {
   var fechaHora = new Date();
   var fecha = fechaHora.toLocaleDateString();
@@ -10,28 +8,19 @@ function obtenerFechaHora() {
   return fecha + " - " + hora;
 }
 
-// Actualizar la fecha y hora en el elemento
-
-
-
-// Obtener el elemento donde se mostrará la ubicación
 var ubicacionElemento = document.getElementById("ubicacion");
 
-// Función para actualizar la fecha y hora en el elemento
 function actualizarFechaHora() {
   const fechaHoraElemento = document.getElementById('fecha-hora');
   fechaHoraElemento.textContent = obtenerFechaHora();
 }
 
-// Actualizar la fecha y hora inicialmente
 actualizarFechaHora();
 
-// Actualizar la fecha y hora cada segundo
 setInterval(actualizarFechaHora, 1000);
 
-var ciudadActual = ""; // Variable global para almacenar la ciudad
+var ciudadActual = "";
 
-// Función para obtener la ubicación del usuario
 function obtenerUbicacion() {
     navigator.geolocation.getCurrentPosition(function(position) {
       var latitud = position.coords.latitude;
@@ -45,10 +34,9 @@ function obtenerUbicacion() {
         console.log(data)
           var city = data.locality + " - " + data.city;
           var ciudad = data.city
-          ciudadActual = ciudad;// Guardar la ciudad en la variable global
-          // Aquí puedes hacer lo que necesites con la variable "ciudadActual"
+          ciudadActual = ciudad;
           obtenerTiempo(ciudadActual);
-          // Aquí puedes hacer lo que necesites con la variable "location"
+
           ubicacionElemento.textContent = city;
         })
         .catch(error => {
@@ -60,7 +48,7 @@ function obtenerUbicacion() {
     });
   }
   
-  // Obtener la ubicación del usuario
+
   obtenerUbicacion();
 
 // archivo.js
@@ -74,9 +62,9 @@ function pedirUsuario() {
 
   var boton = document.querySelector(".boton-logout");
   
-  // Verificar el estado actual del botón
+
   if (boton.classList.contains("log-out")) {
-    // Si el botón está en estado de "Log Out"
+
     boton.classList.remove("log-out");
     boton.classList.add("log-in");
     boton.innerHTML = `
@@ -97,7 +85,7 @@ function pedirUsuario() {
     fotoPerfilElement.style.opacity = "0";
 
   } else {
-    // Si el botón está en estado de "Log In"
+
     boton.classList.remove("log-in");
     boton.classList.add("log-out");
     boton.innerHTML = `
@@ -144,7 +132,7 @@ function transparente(){
 }
 
 function obtenerTiempo(ciudad) {
-  const apiKey = 'd255db7a1c140565c6e7f0a75ad5e944'; // Reemplaza "TU_API_KEY" con tu propia clave de API de OpenWeatherMap
+  const apiKey = 'd255db7a1c140565c6e7f0a75ad5e944';
   
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}&lang=es&units=metric`;
   
@@ -152,7 +140,7 @@ function obtenerTiempo(ciudad) {
   .then(res => res.json())
   .then(data => {
       console.log(data);
-      // Acceder a los datos meteorológicos
+
       var temperatura = data.main.temp;
       var descripcion = data.weather[0].description;
       var tempMax = data.main.temp_max;
@@ -161,7 +149,6 @@ function obtenerTiempo(ciudad) {
       var viento = data.wind.speed;
       var img = data.weather[0].icon
       
-      // Actualizar el contenido HTML del elemento con la información del tiempo
       var contenidoElemento = document.querySelector('.contenido');
       contenidoElemento.innerHTML = `<div class="ajustado" id="ajustado"><img src="http://openweathermap.org/img/wn/${img}@2x.png" alt="error" class="imagen">
       <div class="linea-1">La temperatura actual en <span class="ciudad">${ciudad}</span> es de ${temperatura}°C. El clima es ${descripcion}.</div>
